@@ -1,0 +1,10 @@
+{% extends "layout.njk" %}
+
+{% block content %}
+<h1>Weather App</h1>
+<form action="/fetch-weather" method="POST">
+  <input type="text" name="address" placeholder="Enter Address" required>
+  <button type="submit">Get Weather</button>
+</form>
+<div id="results"></div>
+{% endblock %}

@@ -1,0 +1,16 @@
+CREATE DATABASE weather_app;
+
+USE weather_app;
+
+CREATE TABLE api_keys (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  key_name VARCHAR(50) NOT NULL,
+  api_key TEXT NOT NULL
+);
+
+CREATE TABLE weather_data (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  address VARCHAR(255) NOT NULL,
+  weather JSON NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
