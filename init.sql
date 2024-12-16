@@ -35,7 +35,7 @@ CREATE TABLE WeatherConditions (
     description VARCHAR(100),
     icon VARCHAR(10),
     FOREIGN KEY (current_weather_id) REFERENCES CurrentWeather(id)
-);
+); 
 
 INSERT INTO Location (latitude, longitude, address, timezone, timezone_offset)
 VALUES (51.3787, 1.4041, '37 Invicta Road North Calsward Midrand', 'Europe/London', 0);
