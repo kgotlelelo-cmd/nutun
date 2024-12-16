@@ -1,10 +1,9 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<h1>Weather App</h1>
-<form action="/fetch-weather" method="POST">
-  <input type="text" name="address" placeholder="Enter Address" required>
-  <button type="submit">Get Weather</button>
-</form>
-<div id="results"></div>
+<div class="container d-flex flex-column justify-content-center align-items-center" style="min-height: 90vh;">
+    <h1 class="mb-4">Search Address </h1>
+    <input type="text" id="address-input" class="form-control w-50" placeholder="Search for an address..." autocomplete="off">
+    <ul id="suggestions-list" class="list-group mt-2 w-50"></ul>
+</div>
 {% endblock %}

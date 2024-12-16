@@ -1,0 +1,13 @@
+{% extends "layout.njk" %}
+
+{% block title %}Home - Nutun Weather Application{% endblock %}
+
+{% block content %}
+    {% set slides = [
+    { image: "/images/sun.jpeg", alt: "Sunrise", title: "Sunrise", description: "Some representative placeholder content for the first slide." },
+    { image: "/images/sunset.jpg", alt: "Sunset", title: "Sunset", description: "Some representative placeholder content for the second slide." },
+    { image: "/images/sun.jpeg", alt: "Sun", title: "Feels like", description: "Some representative placeholder content for the third slide." },
+    { image: "/images/sunrise.jpg", alt: "Temperature", title: "Temperature", description: "Some representative placeholder content for the fourth slide." }
+] %}
+{% include "carousel.njk" %}
+{% endblock %}

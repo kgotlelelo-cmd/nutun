@@ -1,3 +1,5 @@
+const baseUrl = 'http://localhost:3000';
+
 document.addEventListener('DOMContentLoaded', () => {
     const input = document.getElementById('address-input');
     const suggestionsList = document.getElementById('suggestions-list');
@@ -12,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         try {
-            const response = await fetch(`http://localhost:3000/suggestions?searchText=${encodeURIComponent(searchText)}`);
+            const response = await fetch(`${baseUrl}/suggestions?searchText=${encodeURIComponent(searchText)}`);
             const data = await response.json();
 
             suggestionsList.innerHTML = '';
@@ -20,10 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 data.suggestions.forEach(suggestion => {
                     const li = document.createElement('li');
                     li.textContent = suggestion.full_address || suggestion.name;
-                    li.addEventListener('click', () => {
+                    li.addEventListener('click', async () => {
                         input.value = li.textContent;
                         suggestionsList.innerHTML = '';
                         suggestionsList.style.display = 'none';
+
+                        localStorage.setItem('address', li.textContent);
+
+                        window.location.href = '/weather-page';
                     });
                     suggestionsList.appendChild(li);
                 });
@@ -36,7 +42,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Hide suggestions when clicking outside
     document.addEventListener('click', (event) => {
         if (!input.contains(event.target) && !suggestionsList.contains(event.target)) {
             suggestionsList.innerHTML = '';
@@ -44,3 +49,41 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+if (window.location.pathname === '/weather-page') {
+    document.getElementById('saveWeatherBtn').style.display = 'inline-block';
+}
+
+
+document.getElementById('saveWeatherBtn').addEventListener('click', function () {
+    confetti();
+
+    setTimeout(function () {
+        window.location.href = '/history-page';
+    }, 2000);
+    // const weatherData = localStorage.getItem('weatherdata');
+
+    // if (weatherData) {
+    //     fetch('http://localhost:3000/save-weather', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ data: weatherData })
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Success:', data);
+    //         confetti();
+    //     })
+    //     .catch((error) => {
+    //         console.error('Error:', error);
+    //     });
+    // } else {
+    //     alert('No weather data found in storage.');
+    // }
+});
+
+function redirectToHomePage() {
+    window.location.href = '/home-page';
+}

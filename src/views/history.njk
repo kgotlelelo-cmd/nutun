@@ -1,10 +1,29 @@
 {% extends "layout.njk" %}
 
 {% block content %}
-<h1>Weather History</h1>
-<ul>
-  {% for entry in history %}
-  <li>{{ entry.address }}: {{ entry.weather }}</li>
-  {% endfor %}
-</ul>
+<h1 class="text-center my-4">Weather History</h1>
+<div class="container">
+  <div class="row">
+    {% for entry in history %}
+    <div class="col-md-4 mb-4">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ entry.address }}</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Weather: {{ entry.description }}</h6>
+          <p class="card-text">
+            Temperature: {{ entry.temperature }}°C <br>
+            Feels Like: {{ entry.feels_like }}°C <br>
+            Wind Speed: {{ entry.wind_speed }} m/s <br>
+            Humidity: {{ entry.humidity }}%
+          </p>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+      <p>No weather history available.</p>
+    </div>
+    {% endfor %}
+  </div>
+</div>
 {% endblock %}

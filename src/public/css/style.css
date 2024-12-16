@@ -1,43 +1,26 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+#saveWeatherBtn {
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.container {
-    text-align: center;
-    width: 300px;
+#saveWeatherBtn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    animation: shake 0.5s;
 }
 
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+@keyframes shake {
+    0% { transform: translate(1px, 0); }
+    25% { transform: translate(-1px, 0); }
+    50% { transform: translate(1px, 0); }
+    75% { transform: translate(-1px, 0); }
+    100% { transform: translate(0, 0); }
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 10px 0 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+#address-input {
+    border-radius: 25px;
+}
+
+#suggestions-list {
     max-height: 200px;
     overflow-y: auto;
-    display: none;
-}
-
-li {
-    padding: 10px;
-    cursor: pointer;
-}
-
-li:hover {
-    background-color: #e0e0e0;
 }
