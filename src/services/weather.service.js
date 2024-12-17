@@ -91,9 +91,9 @@ async function saveWeatherData(weatherData) {
         current.uvi,
         current.clouds,
         current.visibility,
-        current.wind_speed,
-        current.wind_deg,
-        current.wind_gust
+        current.wind_speed || null,
+        current.wind_deg || null,
+        current.wind_gust || null
       ]
     );
 
