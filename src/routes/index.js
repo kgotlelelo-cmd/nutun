@@ -20,6 +20,13 @@ router.get('/home-page', async (req, res) => {
 router.get('/weather-page/:address', async (req, res) => {
   const { address } = req.params;
   const weatherData = await getWeather(address);
+
+  weatherData.current.sunrise = new Date(weatherData.current.sunrise * 1000).toUTCString();
+  weatherData.current.sunset = new Date(weatherData.current.sunset * 1000).toUTCString();
+
+  weatherData.current.temp = `${weatherData.current.temp.toFixed(2)}°C`;
+  weatherData.current.feels_like = `${weatherData.current.feels_like.toFixed(2)}°C`;
+
   res.render('weather',{ weatherData });
 });
 

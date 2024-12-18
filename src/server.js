@@ -8,7 +8,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static('src/public'));
 
-// View Engine
 nunjucks.configure('src/views', { express: app, noCache: true });
 app.set('view engine', 'njk');
 

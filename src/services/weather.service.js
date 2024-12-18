@@ -1,4 +1,3 @@
-const { get } = require('jquery');
 const pool = require('../db/connection');
 const { forwardGeocode } = require('../api/map.api');
 const { fetchWeatherData } = require('../api/weather.api');

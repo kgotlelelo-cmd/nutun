@@ -5,9 +5,9 @@
 {% block content %}
     {% set slides = [
     { image: "/images/sun.jpeg", alt: "Sunrise", title: "Sunrise", description: weatherData.current.sunrise },
-    { image: "/images/sunset.jpg", alt: "Sunset", title: "Sunset", description: weatherData.current.sunset },
-    { image: "/images/sun.jpeg", alt: "Sun", title: "Feels like", description: weatherData.current.feels_like },
-    { image: "/images/sunrise.jpg", alt: "Temperature", title: "Temperature", description: weatherData.current.temp }
+    { image: "/images/sunset.jpeg", alt: "Sunset", title: "Sunset", description: weatherData.current.sunset },
+    { image: "/images/feel-like.jpeg", alt: "Sun", title: "Feels like", description: weatherData.current.feels_like },
+    { image: "/images/temperature.jpeg", alt: "Temperature", title: "Temperature", description: weatherData.current.temp }
 ] %}
 {% include "carousel.njk" %}
 {% endblock %}

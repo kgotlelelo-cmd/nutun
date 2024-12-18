@@ -1,7 +1,7 @@
 require('dotenv').config();
 const axios = require('axios');
 
-async function fetchWeatherData(lat, lon, units = 'standard') {
+async function fetchWeatherData(lat, lon, units = 'metric') {
   const apiKey = process.env.OPENWEATHERMAP_API_KEY;
   if (!apiKey) {
     throw new Error('API key is missing. Please set OPENWEATHERMAP_API_KEY in your .env file.');
@@ -14,7 +14,7 @@ async function fetchWeatherData(lat, lon, units = 'standard') {
       params: {
         lat,
         lon,
-        exclude: 'hourly,minutely',
+        exclude: 'daily,minutely',
         appid: apiKey,
         units
       }

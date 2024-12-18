@@ -54,36 +54,6 @@ if (window.location.pathname.includes('weather-page')) {
     document.getElementById('saveWeatherBtn').style.display = 'inline-block';
 }
 
-
-// document.getElementById('saveWeatherBtn').addEventListener('click', function () {
-//     confetti();
-
-//     setTimeout(function () {
-//         window.location.href = '/history-page';
-//     }, 2000);
-//     const weatherData = localStorage.getItem('weatherdata');
-
-//     if (weatherData) {
-//         fetch('http://localhost:3000/save-weather', {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify({ data: weatherData })
-//         })
-//         .then(response => response.json())
-//         .then(data => {
-//             console.log('Success:', data);
-//             confetti();
-//         })
-//         .catch((error) => {
-//             console.error('Error:', error);
-//         });
-//     } else {
-//         alert('No weather data found in storage.');
-//     }
-// });
-
 function redirectToHomePage() {
     window.location.href = '/home-page';
 }
@@ -143,5 +113,4 @@ $(function() {
             }
         });
     });
-    
 });
