@@ -1,10 +1,13 @@
-FROM mysql:8.0
+FROM node:18
 
-ENV MYSQL_ROOT_PASSWORD=rootpassword
-ENV MYSQL_DATABASE=mydb
-ENV MYSQL_USER=myuser
-ENV MYSQL_PASSWORD=mypassword
+WORKDIR /usr/src/app
 
-EXPOSE 3306
+COPY package*.json ./
 
-CMD ["mysqld"]
+RUN npm install
+
+COPY . .
+
+EXPOSE ${PORT}
+
+CMD ["npm", "start"]

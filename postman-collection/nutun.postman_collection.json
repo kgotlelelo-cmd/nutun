@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "ba17c843-af5e-42de-9f29-ca6833e8757d",
+		"name": "nutun",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34630101"
+	},
+	"item": [
+		{
+			"name": "geocoding",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/geocoding?searchText=37 Invicta Drive, Smythes Creek Victoria 3351, Australia",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"geocoding"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "37 Invicta Drive, Smythes Creek Victoria 3351, Australia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weather-address",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/weather/:address",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"weather",
+						":address"
+					],
+					"variable": [
+						{
+							"key": "address",
+							"value": "37 Invicta Drive, Smythes Creek Victoria 3351, Australia"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "save-weather",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"lat\": 51.3787,\r\n    \"lon\": 1.4041,\r\n    \"address\": \"37 Invicta Rd north carlswald\",\r\n    \"timezone\": \"Europe/London\",\r\n    \"timezone_offset\": 0,\r\n    \"current\": {\r\n        \"dt\": 1734164019,\r\n        \"sunrise\": 1734162750,\r\n        \"sunset\": 1734191163,\r\n        \"temp\": 38.64,\r\n        \"feels_like\": 30.87,\r\n        \"pressure\": 1021,\r\n        \"humidity\": 89,\r\n        \"dew_point\": 35.69,\r\n        \"uvi\": 0,\r\n        \"clouds\": 100,\r\n        \"visibility\": 10000,\r\n        \"wind_speed\": 12.75,\r\n        \"wind_deg\": 276,\r\n        \"wind_gust\": 17.02,\r\n        \"weather\": [\r\n            {\r\n                \"id\": 804,\r\n                \"main\": \"Clouds\",\r\n                \"description\": \"overcast clouds\",\r\n                \"icon\": \"04d\"\r\n            }\r\n        ]\r\n    },\r\n    \"daily\": [\r\n        {\r\n            \"dt\": 1734174000,\r\n            \"sunrise\": 1734162750,\r\n            \"sunset\": 1734191163,\r\n            \"moonrise\": 1734186240,\r\n            \"moonset\": 1734160500,\r\n            \"moon_phase\": 0.47,\r\n            \"summary\": \"Expect a day of partly cloudy with rain\",\r\n            \"temp\": {\r\n                \"day\": 42.03,\r\n                \"min\": 38.48,\r\n                \"max\": 44.87,\r\n                \"night\": 42.4,\r\n                \"eve\": 43.27,\r\n                \"morn\": 40.32\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 34.23,\r\n                \"night\": 34.29,\r\n                \"eve\": 36.09,\r\n                \"morn\": 33.37\r\n            },\r\n            \"pressure\": 1021,\r\n            \"humidity\": 86,\r\n            \"dew_point\": 38.16,\r\n            \"wind_speed\": 17.43,\r\n            \"wind_deg\": 293,\r\n            \"wind_gust\": 24.47,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 500,\r\n                    \"main\": \"Rain\",\r\n                    \"description\": \"light rain\",\r\n                    \"icon\": \"10d\"\r\n                }\r\n            ],\r\n            \"clouds\": 100,\r\n            \"pop\": 0.94,\r\n            \"rain\": 0.18,\r\n            \"uvi\": 0.46\r\n        },\r\n        {\r\n            \"dt\": 1734260400,\r\n            \"sunrise\": 1734249200,\r\n            \"sunset\": 1734277569,\r\n            \"moonrise\": 1734275700,\r\n            \"moonset\": 1734251700,\r\n            \"moon_phase\": 0.5,\r\n            \"summary\": \"There will be partly cloudy today\",\r\n            \"temp\": {\r\n                \"day\": 49.3,\r\n                \"min\": 41.41,\r\n                \"max\": 51.33,\r\n                \"night\": 51.33,\r\n                \"eve\": 49.86,\r\n                \"morn\": 43.12\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 43.23,\r\n                \"night\": 50.02,\r\n                \"eve\": 44.85,\r\n                \"morn\": 35.71\r\n            },\r\n            \"pressure\": 1029,\r\n            \"humidity\": 90,\r\n            \"dew_point\": 46.54,\r\n            \"wind_speed\": 18.72,\r\n            \"wind_deg\": 253,\r\n            \"wind_gust\": 29.21,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 804,\r\n                    \"main\": \"Clouds\",\r\n                    \"description\": \"overcast clouds\",\r\n                    \"icon\": \"04d\"\r\n                }\r\n            ],\r\n            \"clouds\": 95,\r\n            \"pop\": 0,\r\n            \"uvi\": 0.57\r\n        },\r\n        {\r\n            \"dt\": 1734346800,\r\n            \"sunrise\": 1734335646,\r\n            \"sunset\": 1734363979,\r\n            \"moonrise\": 1734366120,\r\n            \"moonset\": 1734341820,\r\n            \"moon_phase\": 0.54,\r\n            \"summary\": \"There will be partly cloudy today\",\r\n            \"temp\": {\r\n                \"day\": 50.59,\r\n                \"min\": 47.16,\r\n                \"max\": 51.66,\r\n                \"night\": 47.16,\r\n                \"eve\": 49.24,\r\n                \"morn\": 50.25\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 48.97,\r\n                \"night\": 41.25,\r\n                \"eve\": 44.11,\r\n                \"morn\": 48.74\r\n            },\r\n            \"pressure\": 1033,\r\n            \"humidity\": 77,\r\n            \"dew_point\": 43.7,\r\n            \"wind_speed\": 21.77,\r\n            \"wind_deg\": 264,\r\n            \"wind_gust\": 33.31,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 803,\r\n                    \"main\": \"Clouds\",\r\n                    \"description\": \"broken clouds\",\r\n                    \"icon\": \"04d\"\r\n                }\r\n            ],\r\n            \"clouds\": 74,\r\n            \"pop\": 0,\r\n            \"uvi\": 0.36\r\n        },\r\n        {\r\n            \"dt\": 1734433200,\r\n            \"sunrise\": 1734422090,\r\n            \"sunset\": 1734450392,\r\n            \"moonrise\": 1734457320,\r\n            \"moonset\": 1734430800,\r\n            \"moon_phase\": 0.58,\r\n            \"summary\": \"Expect a day of partly cloudy with rain\",\r\n            \"temp\": {\r\n                \"day\": 50.02,\r\n                \"min\": 46.85,\r\n                \"max\": 50.02,\r\n                \"night\": 49.75,\r\n                \"eve\": 49.39,\r\n                \"morn\": 47.68\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 48.81,\r\n                \"night\": 43.7,\r\n                \"eve\": 43.39,\r\n                \"morn\": 43.48\r\n            },\r\n            \"pressure\": 1027,\r\n            \"humidity\": 87,\r\n            \"dew_point\": 46.22,\r\n            \"wind_speed\": 17.78,\r\n            \"wind_deg\": 195,\r\n            \"wind_gust\": 28.52,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 500,\r\n                    \"main\": \"Rain\",\r\n                    \"description\": \"light rain\",\r\n                    \"icon\": \"10d\"\r\n                }\r\n            ],\r\n            \"clouds\": 100,\r\n            \"pop\": 0.2,\r\n            \"rain\": 0.25,\r\n            \"uvi\": 0.46\r\n        },\r\n        {\r\n            \"dt\": 1734519600,\r\n            \"sunrise\": 1734508531,\r\n            \"sunset\": 1734536809,\r\n            \"moonrise\": 1734548640,\r\n            \"moonset\": 1734518880,\r\n            \"moon_phase\": 0.61,\r\n            \"summary\": \"Expect a day of partly cloudy with rain\",\r\n            \"temp\": {\r\n                \"day\": 51.6,\r\n                \"min\": 50.85,\r\n                \"max\": 53.11,\r\n                \"night\": 52.57,\r\n                \"eve\": 53.11,\r\n                \"morn\": 51.64\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 50.59,\r\n                \"night\": 51.67,\r\n                \"eve\": 52.3,\r\n                \"morn\": 50.36\r\n            },\r\n            \"pressure\": 1015,\r\n            \"humidity\": 88,\r\n            \"dew_point\": 48.13,\r\n            \"wind_speed\": 28.74,\r\n            \"wind_deg\": 192,\r\n            \"wind_gust\": 49.82,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 500,\r\n                    \"main\": \"Rain\",\r\n                    \"description\": \"light rain\",\r\n                    \"icon\": \"10d\"\r\n                }\r\n            ],\r\n            \"clouds\": 99,\r\n            \"pop\": 1,\r\n            \"rain\": 1.55,\r\n            \"uvi\": 0.17\r\n        },\r\n        {\r\n            \"dt\": 1734606000,\r\n            \"sunrise\": 1734594968,\r\n            \"sunset\": 1734623228,\r\n            \"moonrise\": 1734639780,\r\n            \"moonset\": 1734606480,\r\n            \"moon_phase\": 0.64,\r\n            \"summary\": \"Expect a day of partly cloudy with rain\",\r\n            \"temp\": {\r\n                \"day\": 47.64,\r\n                \"min\": 44.17,\r\n                \"max\": 54.68,\r\n                \"night\": 44.17,\r\n                \"eve\": 45.54,\r\n                \"morn\": 52.3\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 39.33,\r\n                \"night\": 36.9,\r\n                \"eve\": 37.83,\r\n                \"morn\": 51.13\r\n            },\r\n            \"pressure\": 1003,\r\n            \"humidity\": 73,\r\n            \"dew_point\": 39.47,\r\n            \"wind_speed\": 32.44,\r\n            \"wind_deg\": 217,\r\n            \"wind_gust\": 49.28,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 501,\r\n                    \"main\": \"Rain\",\r\n                    \"description\": \"moderate rain\",\r\n                    \"icon\": \"10d\"\r\n                }\r\n            ],\r\n            \"clouds\": 17,\r\n            \"pop\": 1,\r\n            \"rain\": 3.99,\r\n            \"uvi\": 1\r\n        },\r\n        {\r\n            \"dt\": 1734692400,\r\n            \"sunrise\": 1734681403,\r\n            \"sunset\": 1734709652,\r\n            \"moonrise\": 1734730740,\r\n            \"moonset\": 1734693780,\r\n            \"moon_phase\": 0.67,\r\n            \"summary\": \"Expect a day of partly cloudy with rain\",\r\n            \"temp\": {\r\n                \"day\": 46.36,\r\n                \"min\": 43.29,\r\n                \"max\": 46.36,\r\n                \"night\": 43.29,\r\n                \"eve\": 44.71,\r\n                \"morn\": 45.68\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 37.51,\r\n                \"night\": 34.97,\r\n                \"eve\": 36.23,\r\n                \"morn\": 36.57\r\n            },\r\n            \"pressure\": 1007,\r\n            \"humidity\": 71,\r\n            \"dew_point\": 37.62,\r\n            \"wind_speed\": 29.55,\r\n            \"wind_deg\": 223,\r\n            \"wind_gust\": 40.04,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 500,\r\n                    \"main\": \"Rain\",\r\n                    \"description\": \"light rain\",\r\n                    \"icon\": \"10d\"\r\n                }\r\n            ],\r\n            \"clouds\": 50,\r\n            \"pop\": 0.87,\r\n            \"rain\": 1.77,\r\n            \"uvi\": 1\r\n        },\r\n        {\r\n            \"dt\": 1734778800,\r\n            \"sunrise\": 1734767834,\r\n            \"sunset\": 1734796078,\r\n            \"moonrise\": 1734821460,\r\n            \"moonset\": 1734780900,\r\n            \"moon_phase\": 0.71,\r\n            \"summary\": \"Expect a day of partly cloudy with rain\",\r\n            \"temp\": {\r\n                \"day\": 42.58,\r\n                \"min\": 42.58,\r\n                \"max\": 44.29,\r\n                \"night\": 43.5,\r\n                \"eve\": 43.74,\r\n                \"morn\": 43.86\r\n            },\r\n            \"feels_like\": {\r\n                \"day\": 36.07,\r\n                \"night\": 36.73,\r\n                \"eve\": 36.88,\r\n                \"morn\": 37.98\r\n            },\r\n            \"pressure\": 1019,\r\n            \"humidity\": 72,\r\n            \"dew_point\": 34.21,\r\n            \"wind_speed\": 17.34,\r\n            \"wind_deg\": 270,\r\n            \"wind_gust\": 25.34,\r\n            \"weather\": [\r\n                {\r\n                    \"id\": 500,\r\n                    \"main\": \"Rain\",\r\n                    \"description\": \"light rain\",\r\n                    \"icon\": \"10d\"\r\n                }\r\n            ],\r\n            \"clouds\": 62,\r\n            \"pop\": 1,\r\n            \"rain\": 0.99,\r\n            \"uvi\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/save-weather",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"save-weather"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "37 Invicta Drive",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/history",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "weather",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/weather?lat=-37.597507&lon=143.798488&unit=imperial",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"weather"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "-37.597507"
+						},
+						{
+							"key": "lon",
+							"value": "143.798488",
+							"description": "-37.597507"
+						},
+						{
+							"key": "unit",
+							"value": "imperial"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "suggestions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/suggestions?searchText=37 Invicta Drive, Smythes Creek Victoria 3351, Australia",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"suggestions"
+					],
+					"query": [
+						{
+							"key": "searchText",
+							"value": "37 Invicta Drive, Smythes Creek Victoria 3351, Australia"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
